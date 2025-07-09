@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Website Saya</title>
+  <!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom right, #0f0c29, #302b63, #24243e); /* Gradasi dark */
+  color: white;
+  scroll-behavior: smooth;
+}
+
+  
+
+ body * {
+  background: linear-gradient(
+    90deg,
+    red,
+    orange,
+    yellow,
+    green,
+    cyan,
+    blue,
+    violet
+  );
+  background-size: 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbowMove 6s linear infinite;
+  font-weight: bold;
+}
+
+@keyframes rainbowMove {
+  0% { background-position: 0%; }
+  100% { background-position: 100%; }
+}
+
+
+  .navbar {
+  background: linear-gradient(to right, #141e30, #243b55);
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* Border bawah */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* (Opsional) bayangan bawah */
+}
+
+
+
+
+    .navbar .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: white;
+    }
+
+    .navbar .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar .nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  padding-bottom: 4px;
+  transition: all 0.3s ease;
+}
+    .navbar .nav-links a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #add8ff; /* Warna garis bawah */
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+     
+    .navbar .nav-links a:hover::after {
+  width: 100%; /* Efek underline muncul saat hover */
+}
+  
+   .navbar .nav-links a:hover {
+  color: #00d4ff; /* Warna teks saat hover */
+}
+
+    .section {
+      padding: 3rem 2rem;
+      background-color: rgba(255, 255, 255, 0.08);
+      margin: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      backdrop-filter: blur(4px);
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1s forwards;
+    }
+
+    .section:nth-of-type(1) { animation-delay: 0.2s; }
+    .section:nth-of-type(2) { animation-delay: 0.4s; }
+    .section:nth-of-type(3) { animation-delay: 0.6s; }
+    .section:nth-of-type(4) { animation-delay: 0.8s; }
+    .section:nth-of-type(5) { animation-delay: 1s; }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h1, h2 {
+      color: #fff;
+    }
+
+    .center {
+      text-align: center;
+    }h1 {
+  font-size: 4em; /* lebih besar */
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); /* bayangan hitam */
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+
+
+
+    .rainbow-text {
+  background: linear-gradient(
+    90deg,
+    red,
+    orange,
+    yellow,
+    green,
+    cyan,
+    blue,
+    violet
+  );
+  background-size: 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbowMove 5s linear infinite;
+  font-weight: bold;
+}
+
+@keyframes rainbowMove {
+  0% { background-position: 0% }
+  100% { background-position: 100% }
+}
+
+
+    .profil-img {
+     
+  width: 200px; /* Atur ukuran sesuai kebutuhan */
+  border-radius: 10%; /* Jika ingin bulat */
+  box-shadow: 0 8px 16px rgba(2, 2, 02, 3); /* Bayangan bawah */
+  margin: 20px auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.profil:hover {
+  transform: scale(1.05); /* Efek zoom saat hover */
+}
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .sosial-list {
+      list-style: none;
+      padding-left: 0;
+    }
+    .sosial-list li i {
+     margin-right: 8px;
+     color: #00d4ff;
+    }
+
+
+
+    .sosial-list li {
+      margin-bottom: 0.5rem;
+    }
+
+    .sosial-list a {
+      color: #add8ff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .sosial-list a:hover {
+      text-decoration: underline;
+    }
+
+    /* Galeri Foto */
+    
+    .gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.gallery img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  background-color: #1e1e2f;
+  border-radius: 10px;
+  padding: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Lightbox modal */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox:target {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border: 5px solid white;
+  border-radius: 10px;
+}
+
+/* Tombol close */
+.close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 40px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+
+    /* Form Kontak */.gallery img {
+  width: 100%;
+  height: 200px; /* Ukuran tinggi seragam */
+  object-fit: cover; /* Potong foto agar rapi */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border-radius: 8px;
+      border: none;
+      font-size: 1rem;
+      margin-top: 0.25rem;
+    }
+
+    input[type="submit"] {
+      background-color: #2a5298;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #1e3c72;
+    }
+
+    /* Musik */
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Musik Otomatis -->
+  <audio autoplay loop>
+    <source src="music latar/labyrinth-for-the-brain-190096.mp3" type="audio/mpeg">
+    Browser Anda tidak mendukung audio.
+  </audio>
+
+  <!-- NAVIGATION BAR -->
+  <nav class="navbar">
+    <div class="logo">Website Saya</div>
+    <ul class="nav-links">
+      <li><a href="#beranda">Beranda</a></li>
+      <li><a href="#tentang">Tentang</a></li>
+      <li><a href="#galeri">Galeri</a></li>
+      <li><a href="#sosial">Sosial</a></li>
+      <li><a href="#kontak">Kontak</a></li>
+    </ul>
+  </nav>
+
+  <!-- BERANDA -->
+  <section id="beranda" class="section center">
+    <img src="img/IMG_1223.JPG" alt="Foto Profil" class="profil-img" />
+    <h1>Selamat Datang!</h1>
+    <p>Ini adalah website pribadi saya. Terima kasih sudah berkunjung!</p>
+  </section>
+
+  <!-- TENTANG -->
+  <section id="tentang" class="section">
+    <h2>Tentang Saya</h2>
+    <p>Halo! Nama saya Fauzi. Saya sedang belajar membuat website menggunakan HTML dan CSS. Ini adalah proyek latihan saya untuk membuat website pribadi yang lengkap.</p>
+  </section>
+
+  <!-- GALERI -->
+  <section id="galeri" class="section">
+    <h2>Galeri Foto</h2>
+    <div class="gallery">
+      <a href="img/ferrari-portofino-7680x4320-19843.jpg"><img src="img/ferrari-portofino-7680x4320-19843.jpg" alt="Foto 1" /></a>
+      <a href="img/lamborghini-9504x6336-19888.jpg"><img src="img/lamborghini-9504x6336-19888.jpg" alt="Foto 2" /></a>
+      <a href="img/image2.jpg"><img src="img/image2.jpg" alt="Foto 3" /></a>
+      <a href="img/mclaren-project-5120x2880-22851.jpg"><img src="img/mclaren-project-5120x2880-22851.jpg" alt="Foto 4" /></a>
+      <a href="img/008.jpg"><img src="img/008.jpg" alt="Foto 5" /></a>
+      <a href="img/048.jpg"><img src="img/048.jpg" alt="Foto 6" /></a>
+      <a href="img/053.jpg"><img src="img/053.jpg" alt="Foto 7" /></a>
+    </div>
+
+
+  <!-- Modal View -->
+  <div id="foto1" class="lightbox">
+    <a href="#galeri" class="close">&times;</a>
+    <img src="img/ferrari-portofino-7680x4320-19843.jpg" alt="Foto 1 besar" />
+  </div>
+  <div id="foto2" class="lightbox">
+    <a href="#galeri" class="close">&times;</a>
+    <img src="img/lamborghini-9504x6336-19888.jpg" alt="Foto 2 besar" />
+  </div>
+  <div id="foto3" class="lightbox">
+    <a href="#galeri" class="close">&times;</a>
+    <img src="img/image2.jpg" alt="Foto 3 besar" />
+  </div>
+  <div id="foto4" class="lightbox">
+    <a href="#galeri" class="close">&times;</a>
+    <img src="img/mclaren-project-5120x2880-22851.jpg" alt="Foto 4 besar" />
+  </div>
+  <div id="foto5" class="lightbox">
+    <a href="#galeri" class="close">&times;</a>
+    <img src="img/008.jpg" alt="Foto 5 besar" />
+  </div>
+  <div id="foto6" class="lightbox">
+    <a href="#galeri" class="close">&times;</a>
+    <img src="img/048.jpg" alt="Foto 6 besar" />
+  </div>
+  <div id="foto7" class="lightbox">
+    <a href="#galeri" class="close">&times;</a>
+    <img src="img/053.jpg" alt="Foto 7 besar" />
+  </div>
+  </section>
+
+  <!-- MEDIA SOSIAL -->
+  <section id="sosial" class="section">
+  <h2>Media Sosial Saya</h2>
+ 
+<ul class="sosial-list">
+  <li>
+    <a class="rainbow-text" href="mailto:fauzi@email.com" target="_blank">
+      <i class="fas fa-envelope"></i> Email
+    </a>
+  </li>
+  <li>
+    <a class="rainbow-text" href="https://wa.me/62895320141462" target="_blank">
+      <i class="fab fa-whatsapp"></i> WhatsApp
+    </a>
+  </li>
+  <li>
+    <a class="rainbow-text" href="https://facebook.com" target="_blank">
+      <i class="fab fa-facebook"></i> Facebook
+    </a>
+  </li>
+  <li>
+    <a class="rainbow-text" href="https://instagram.com" target="_blank">
+      <i class="fab fa-instagram"></i> Instagram
+    </a>
+  </li>
+  <li>
+    <a class="rainbow-text" href="https://github.com" target="_blank">
+      <i class="fab fa-github"></i> GitHub
+    </a>
+  </li>
+</ul>
+
+</section>
+
+
+  <!-- FORM KONTAK -->
+  <section id="kontak" class="section">
+    <h2>Kontak Saya</h2>
+    <form action="#" method="post">
+      <div class="form-group">
+        <label>Nama:</label>
+        <input type="text" name="nama" required>
+      </div>
+      <div class="form-group">
+        <label>Email:</label>
+        <input type="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label>Pesan:</label>
+        <textarea name="pesan" rows="5" required></textarea>
+      </div>
+      <input type="submit" value="Kirim Pesan">
+    </form>
+  </section>
+
+</body>
+</html>
